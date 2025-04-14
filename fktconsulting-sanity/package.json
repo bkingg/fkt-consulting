@@ -15,11 +15,13 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/vision": "^3.81.0",
+    "@sanity/locale-fr-fr": "^1.2.16",
+    "@sanity/vision": "^3.84.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sanity": "^3.81.0",
-    "styled-components": "^6.1.8"
+    "sanity": "^3.84.0",
+    "sanity-plugin-tags": "^2.1.1",
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^5.0.2",
