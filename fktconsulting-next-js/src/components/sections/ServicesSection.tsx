@@ -1,5 +1,3 @@
-import { sanityFetch } from "@/sanity/client";
-import { groq, SanityDocument } from "next-sanity";
 import ServiceCard from "@/components/ServiceCard";
 import Link from "next/link";
 import urlFor from "@/lib/urlFor";

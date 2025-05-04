@@ -62,10 +62,12 @@ export default async function Contact() {
         <div className="row">
           <div className="contact__address">
             {siteSettings.contactPageSubTitle && (
-              <h1 className="text-start">{siteSettings.contactPageSubTitle}</h1>
+              <h2 className="h1 text-center">
+                {siteSettings.contactPageSubTitle}
+              </h2>
             )}
             {siteSettings.contactPageDescription && (
-              <p className="text-start">
+              <p className="text-center">
                 {siteSettings.contactPageDescription}
               </p>
             )}

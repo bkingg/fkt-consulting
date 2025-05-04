@@ -7,7 +7,7 @@ import { parseISO, formatDistance } from "date-fns";
 import { fr } from "date-fns/locale";
 import { notFound } from "next/navigation";
 import Tags from "@/components/Tags";
-import { ResolvingMetadata, Metadata } from "next";
+import { Metadata } from "next";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 
 let actualite: SanityDocument;
@@ -69,10 +69,7 @@ export default async function Actualite({
   );
 }
 
-export async function generateMetadata(
-  { params }: { params: { slug: string } },
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: actualite?.title,
     openGraph: {

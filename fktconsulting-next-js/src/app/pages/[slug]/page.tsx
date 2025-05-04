@@ -4,7 +4,7 @@ import PageHeader from "@/components/PageHeader";
 import urlFor from "@/lib/urlFor";
 import { notFound } from "next/navigation";
 import Sections from "@/components/sections/Sections";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import Breadcrumb from "react-bootstrap/esm/Breadcrumb";
 import { BreadcrumbItem } from "react-bootstrap";
 

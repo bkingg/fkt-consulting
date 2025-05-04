@@ -1,7 +1,6 @@
 import urlFor from "@/lib/urlFor";
 import Image from "next/image";
-import Link from "next/link";
-import { Carousel, CarouselItem, CarouselCaption } from "react-bootstrap";
+import { Carousel, CarouselItem } from "react-bootstrap";
 
 interface TemoignagesSectionProps {
   section: any;

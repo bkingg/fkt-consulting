@@ -197,10 +197,7 @@ export default async function Projet({ params }: { params: { slug: string } }) {
   );
 }
 
-export async function generateMetadata(
-  { params }: { params: { slug: string } },
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: projet?.title,
     openGraph: {

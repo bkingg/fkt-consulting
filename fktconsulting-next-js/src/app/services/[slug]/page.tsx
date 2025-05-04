@@ -1,17 +1,10 @@
 import { sanityFetch } from "@/sanity/client";
-import { groq, SanityDocument, SanityImageAssetDocument } from "next-sanity";
-import { PortableText } from "@portabletext/react";
+import { groq, SanityDocument } from "next-sanity";
 import urlFor from "@/lib/urlFor";
 import PageHeader from "@/components/PageHeader";
 import { notFound } from "next/navigation";
 import { ResolvingMetadata, Metadata } from "next";
-import Image from "next/image";
-import { Icon } from "@iconify/react";
 import React from "react";
-import Slider from "react-slick";
-import GallerySlider from "@/components/GallerySlider";
-import Link from "next/link";
-import DirectionsLink from "@/components/DirectionsLink";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 import Sections from "@/components/sections/Sections";
 

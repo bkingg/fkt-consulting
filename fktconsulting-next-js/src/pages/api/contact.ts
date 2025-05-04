@@ -1,28 +1,29 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
-export default async function handler(req: NextApiRequest,
-  res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method === "POST") {
     // Send Email
     const { name, email, phoneNumber, message } = req.body;
     // Create a transporter object using the default SMTP transport
     const transporter = nodemailer.createTransport({
-      host: 'smtp.office365.com',
-      port: 587,
-      secure: false, // Use TLS
+      host: "smtp.gmail.com",
+      service: "Gmail",
       auth: {
-        user: process.env.OFFICE365_USER, // Your Office 365 email address
-        pass: process.env.OFFICE365_PASS, // Your Office 365 app password
+        user: process.env.GMAIL_USER, // Your Office 365 email address
+        pass: process.env.GMAIL_PASS, // Your Office 365 app password
       },
     });
 
     // Set up email data with unicode symbols
     let mailOptions = {
-      from: `"HEPO DAKAR" <${process.env.OFFICE365_USER}>`, // Sender's address
+      from: `"FKT Consulting" <${process.env.GMAIL_USER}>`, // Sender's address
       replyTo: email,
-      to: process.env.OFFICE365_USER, // Receiver's address
-      subject: 'Demande d\'informations', // Subject line
+      to: process.env.GMAIL_USER, // Receiver's address
+      subject: "Formulaire de Contact", // Subject line
       text: `Nom: ${name}
             Email: ${email}
             Numéro de téléphone: ${phoneNumber}
@@ -35,14 +36,21 @@ export default async function handler(req: NextApiRequest,
     try {
       // Send mail with defined transport object
       await transporter.sendMail(mailOptions);
-      res.status(200).json({ success: true, message: 'Email sent successfully' });
+      res
+        .status(200)
+        .json({ success: true, message: "Email envoyé avec succès" });
     } catch (error) {
-      res.status(500).json({ success: false, message: 'Failed to send email', error });
+      res.status(500).json({
+        success: false,
+        message: "Erreur lors de l'envoi de l'Email",
+        error,
+      });
     }
-    
-    res.status(200).json({ message: "Form submitted successfully!" });
+
+    res
+      .status(200)
+      .json({ message: "Votre formulaire a été envoyé avec succès" });
   } else {
     res.status(405).json({ message: "Method not allowed" });
   }
 }
-  

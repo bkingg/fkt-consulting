@@ -1,7 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import { sanityFetch } from "@/sanity/client";
 import { groq, SanityDocument } from "next-sanity";
-import Link from "next/link";
 import ArticleCard from "@/components/ArticleCard";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 

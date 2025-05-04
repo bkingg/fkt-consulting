@@ -1,4 +1,3 @@
-import { PortableText } from "@portabletext/react";
 import LatestArticlesSection from "./LatestArticlesSection";
 import LogoListSection from "./LogoListSection";
 import RichTextSection from "./RichTextSection";
