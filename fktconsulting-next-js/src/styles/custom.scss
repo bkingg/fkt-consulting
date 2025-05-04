@@ -31,8 +31,6 @@ $breadcrumb-divider: "\f285";
 @import "programmes";
 @import "article";
 @import "projet";
-@import "category";
-@import "product";
 @import "service";
 @import "contact";
 @import "loader";
@@ -142,10 +140,6 @@ input {
 .btn-primary {
   border-color: map.get($theme-colors, "primary");
   color: map.get($theme-colors, "light");
-}
-
-.form-control {
-  // border-radius: 1.75rem;
 }
 
 // * {

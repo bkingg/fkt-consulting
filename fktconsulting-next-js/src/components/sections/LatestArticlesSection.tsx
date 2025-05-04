@@ -7,22 +7,6 @@ interface LatestArticlesSectionProps {
   section: any;
 }
 
-interface ArticleTag {
-  _key: string;
-  label: string;
-  name: string;
-}
-
-interface Actualite {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  tags: ArticleTag[];
-  image: string;
-  description: string;
-  _createdAt: string;
-}
-
 const ACTUALITES_QUERY = groq`*[
   _type == "article"
   && defined(slug.current)

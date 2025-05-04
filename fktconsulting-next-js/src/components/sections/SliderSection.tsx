@@ -1,5 +1,4 @@
 import urlFor from "@/lib/urlFor";
-import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { Carousel, CarouselItem, CarouselCaption } from "react-bootstrap";

@@ -1,9 +1,6 @@
 "use client";
 
-import urlFor from "@/lib/urlFor";
 import { PortableText } from "next-sanity";
-import Image from "next/image";
-import Link from "next/link";
 import { Accordion } from "react-bootstrap";
 
 interface FAQSectionProps {

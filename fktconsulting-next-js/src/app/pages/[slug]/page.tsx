@@ -1,7 +1,5 @@
 import { sanityFetch } from "@/sanity/client";
 import { groq, SanityDocument } from "next-sanity";
-import { PortableText } from "@portabletext/react";
-import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import urlFor from "@/lib/urlFor";
 import { notFound } from "next/navigation";
@@ -47,10 +45,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
   );
 }
 
-export async function generateMetadata(
-  { params }: { params: { slug: string } },
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const PAGE_QUERY = groq`
     *[
       _type == "page"

@@ -1,9 +1,7 @@
 "use client";
 
 import { SanityImageAssetDocument } from "next-sanity";
-import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
-import Link from "next/link";
 import { Tabs, Tab } from "react-bootstrap";
 import Slider from "react-slick";
 

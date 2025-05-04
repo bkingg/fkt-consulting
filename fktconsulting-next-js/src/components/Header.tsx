@@ -1,6 +1,5 @@
 import { sanityFetch } from "@/sanity/client";
 import { groq, SanityDocument } from "next-sanity";
-import Link from "next/link";
 import Navigation from "./Navigation";
 import urlFor from "@/lib/urlFor";
 

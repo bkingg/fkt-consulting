@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { pathname } from "next-extra/pathname";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@/styles/globals.css";
@@ -33,10 +32,8 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { slug: string };
 }>) {
   return (
     <html lang="fr" className={playfair_display.variable}>
