@@ -71,10 +71,7 @@ export default async function Service({
   );
 }
 
-export async function generateMetadata(
-  { params }: { params: { slug: string } },
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: service?.title,
     openGraph: {

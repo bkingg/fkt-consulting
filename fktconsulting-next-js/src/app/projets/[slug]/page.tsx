@@ -3,11 +3,10 @@ import { groq, SanityDocument, SanityImageAssetDocument } from "next-sanity";
 import { PortableText } from "@portabletext/react";
 import urlFor from "@/lib/urlFor";
 import { notFound } from "next/navigation";
-import { ResolvingMetadata, Metadata } from "next";
+import { Metadata } from "next";
 import { Icon } from "@iconify/react";
 import React from "react";
 import GallerySlider from "@/components/GallerySlider";
-import ProjetPlans from "@/components/ProjetPlans";
 import Link from "next/link";
 import DirectionsLink from "@/components/DirectionsLink";
 import ProjetInquiryForm from "@/components/ProjetInquiryForm";
@@ -64,11 +63,6 @@ export default async function Projet({ params }: { params: { slug: string } }) {
       },
       address,
       map,
-      plans[]{
-        _key,
-        title,
-        image
-      },
       brochure,
       "brochureUrl": brochure.asset->url
     }`;
@@ -156,16 +150,6 @@ export default async function Projet({ params }: { params: { slug: string } }) {
             <DirectionsLink className="btn btn-primary" embedUrl={projet.map} />
           </div>
         </div>
-      </div>
-
-      <div className="section container projet__plans">
-        <ProjetPlans
-          plans={projet.plans?.map((plan: PlanObject) => {
-            const image = plan.image;
-            plan.image.asset = `${urlFor(image.asset).width(800).url()}`;
-            return plan;
-          })}
-        />
       </div>
 
       {projet.brochure && (

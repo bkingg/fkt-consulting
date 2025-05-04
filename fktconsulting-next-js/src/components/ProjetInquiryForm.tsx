@@ -13,12 +13,6 @@ interface ProjetInquiryFormProps {
   projet: SanityDocument;
 }
 
-interface Projet {
-  _id: string;
-  title: string;
-  slug: { current: string };
-}
-
 type FormData = z.infer<typeof schema>;
 
 // Define the schema using Zod

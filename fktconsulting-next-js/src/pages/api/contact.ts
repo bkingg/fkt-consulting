@@ -19,7 +19,7 @@ export default async function handler(
     });
 
     // Set up email data with unicode symbols
-    let mailOptions = {
+    const mailOptions = {
       from: `"FKT Consulting" <${process.env.GMAIL_USER}>`, // Sender's address
       replyTo: email,
       to: process.env.GMAIL_USER, // Receiver's address

@@ -1,4 +1,3 @@
-import { sanityFetch } from "@/sanity/client";
 import { SanityDocument } from "next-sanity";
 import Link from "next/link";
 import urlFor from "@/lib/urlFor";
@@ -9,22 +8,6 @@ import Tags from "./Tags";
 
 interface ArticleCardProps {
   actualite: SanityDocument;
-}
-
-interface ArticleTag {
-  _key: string;
-  label: string;
-  name: string;
-}
-
-interface Actualite {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  tags: ArticleTag[];
-  image: string;
-  description: string;
-  _createdAt: string;
 }
 
 export default async function ArticleCard({ actualite }: ArticleCardProps) {
