@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity";
+import {defineField, defineType} from 'sanity'
 
 // schemas/siteSettings.js
 export default defineType({
@@ -32,7 +32,7 @@ export default defineType({
       name: 'title',
       type: 'string',
       readOnly: true,
-      hidden: true
+      hidden: true,
     }),
     defineField({
       name: 'logo',
@@ -45,7 +45,8 @@ export default defineType({
     }),
     defineField({
       name: 'mainMenu',
-      type: 'reference', to: [{type: 'menu'}],
+      type: 'reference',
+      to: [{type: 'menu'}],
       title: 'Menu Principal',
       group: 'header',
       validation: (Rule) => Rule.required(),
@@ -57,13 +58,13 @@ export default defineType({
       group: 'projets',
       options: {
         hotspot: true,
-      }
+      },
     }),
     defineField({
       title: 'Titre',
       name: 'contactPageTitle',
       type: 'string',
-      group: 'contact'
+      group: 'contact',
     }),
     defineField({
       title: 'Contact - Image',
@@ -72,7 +73,7 @@ export default defineType({
       group: 'contact',
       options: {
         hotspot: true,
-      }
+      },
     }),
     defineField({
       title: 'Lien Google Maps Embed',
@@ -82,19 +83,19 @@ export default defineType({
                     Partagez la carte,
                     Intégrer une carte,
                     Copier et extraire la partie <iframe src="LIEN GOOGLE MAPS EMBED" ...>`,
-      group: 'contact'
+      group: 'contact',
     }),
     defineField({
       title: 'Sous-Titre',
       name: 'contactPageSubTitle',
       type: 'string',
-      group: 'contact'
+      group: 'contact',
     }),
     defineField({
       title: 'Description',
       name: 'contactPageDescription',
       type: 'text',
-      group: 'contact'
+      group: 'contact',
     }),
     defineField({
       title: 'Tél',
@@ -108,38 +109,38 @@ export default defineType({
       name: 'address',
       type: 'array',
       of: [{type: 'textWithLinksBlock'}],
-      group: 'contact'
+      group: 'contact',
     }),
     defineField({
       title: 'Email',
       name: 'email',
       type: 'array',
       of: [{type: 'textWithLinksBlock'}],
-      group: 'contact'
+      group: 'contact',
     }),
     defineField({
       title: 'Facebook URL',
       name: 'facebook',
       type: 'url',
-      group: 'social'
+      group: 'social',
     }),
     defineField({
       title: 'Twitter URL',
       name: 'twitter',
       type: 'url',
-      group: 'social'
+      group: 'social',
     }),
     defineField({
       title: 'Instagram URL',
       name: 'instagram',
       type: 'url',
-      group: 'social'
+      group: 'social',
     }),
     defineField({
       title: 'LinkedIn URL',
       name: 'linkedin',
       type: 'url',
-      group: 'social'
+      group: 'social',
     }),
     defineField({
       name: 'footerBgImage',
@@ -162,7 +163,7 @@ export default defineType({
     defineField({
       name: 'footerDescription',
       type: 'text',
-      title: 'Description de L\école',
+      title: 'Description',
       group: 'footer',
     }),
     defineField({
@@ -175,30 +176,30 @@ export default defineType({
         defineField({
           title: 'Menu de Pied de Page',
           name: 'footerMenu',
-          type: 'object', 
+          type: 'object',
           fields: [
             defineField({
               title: 'Titre',
               name: 'title',
-              type: 'string'
+              type: 'string',
             }),
             defineField({
               title: 'Menu',
               name: 'menu',
-              type: 'reference', to: [{type: 'menu'}],
+              type: 'reference',
+              to: [{type: 'menu'}],
               validation: (rule) => rule.required(),
-            })
-          ]
-        })
+            }),
+          ],
+        }),
       ],
       options: {
         sortable: true, // Enable sorting
-      }
+      },
     }),
   ],
   initialValue: {
     title: 'Paramètres du Site',
     contactPageTitle: 'Contact',
-  }
-});
-  
+  },
+})

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { pathname } from "next-extra/pathname";
-import { Montserrat, Vidaloka } from "next/font/google";
+import { Montserrat, Playfair_Display } from "next/font/google";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@/styles/globals.css";
 import "@/styles/custom.scss";
@@ -17,10 +17,10 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-const vidaloka = Vidaloka({
+const playfair_display = Playfair_Display({
   subsets: ["latin"],
   weight: ["400"],
-  variable: "--font-vidaloka",
+  variable: "--font-playfair-display",
 });
 
 export const metadata: Metadata = {
@@ -39,7 +39,7 @@ export default async function RootLayout({
   params: { slug: string };
 }>) {
   return (
-    <html lang="fr" className={vidaloka.variable}>
+    <html lang="fr" className={playfair_display.variable}>
       <body className={`${montserrat.className}`}>
         <Header />
         <main>{children}</main>

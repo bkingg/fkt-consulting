@@ -1,7 +1,7 @@
 @use "sass:map";
 
 $theme-colors: (
-  "primary": #63803b,
+  "primary": #145518,
   "secondary": #c0a367,
   "success": #22e11c,
   "info": #d9ff50,
@@ -59,7 +59,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-vidaloka);
+  font-family: var(--font-playfair-display);
   font-weight: 600;
   line-height: 1.2;
   text-transform: uppercase;
@@ -153,5 +153,5 @@ input {
 // }
 
 .vidaloka {
-  font-family: var(--font-vidaloka);
+  font-family: var(--font-playfair-display);
 }

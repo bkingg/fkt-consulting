@@ -29,7 +29,7 @@ export default async function ServicesSection({
         {section.description && (
           <p className="text-center">{section.description}</p>
         )}
-        <div className="row row-cols-1 row-cols-md-3 row-cols-xl-4 pt-4 d-flex justify-content-center">
+        <div className="row row-cols-1 row-cols-md-3 pt-4 d-flex justify-content-center">
           {services.map((service: Service) => {
             service.imageUrl = service.image
               ? urlFor(service.image).size(500, 500).fit("crop").url()
