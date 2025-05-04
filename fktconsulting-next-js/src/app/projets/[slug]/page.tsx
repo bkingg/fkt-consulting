@@ -27,12 +27,6 @@ interface ImageObject {
   alt: string;
 }
 
-interface PlanObject {
-  _key: string;
-  title: string;
-  image: SanityImageAssetDocument;
-}
-
 let projet: SanityDocument;
 let projetImageUrl: string;
 

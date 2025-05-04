@@ -3,7 +3,7 @@ import { groq, SanityDocument } from "next-sanity";
 import urlFor from "@/lib/urlFor";
 import PageHeader from "@/components/PageHeader";
 import { notFound } from "next/navigation";
-import { ResolvingMetadata, Metadata } from "next";
+import { Metadata } from "next";
 import React from "react";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 import Sections from "@/components/sections/Sections";
