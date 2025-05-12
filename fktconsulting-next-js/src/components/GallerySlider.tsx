@@ -4,7 +4,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 
 interface GallerySliderProps {
-  gallery: any;
+  gallery: ImageObject[];
 }
 
 interface ImageObject {

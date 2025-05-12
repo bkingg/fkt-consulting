@@ -1,14 +1,10 @@
 "use client";
 
-import { PortableText, PortableTextBlock } from "next-sanity";
+import { PortableText, PortableTextBlock, SanityDocument } from "next-sanity";
 import { Accordion } from "react-bootstrap";
 
 interface FAQSectionProps {
-  section: {
-    title: string;
-    description: string;
-    faq: QuestionReponse[];
-  };
+  section: SanityDocument;
 }
 
 interface QuestionReponse {

@@ -1,5 +1,6 @@
 "use client";
 
+import { SanityDocument, SanityImageAssetDocument } from "next-sanity";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import {
@@ -14,7 +15,7 @@ import {
 } from "react-bootstrap";
 
 interface NavigationProps {
-  siteSettings: any;
+  siteSettings: SanityDocument;
 }
 
 interface MenuItem {

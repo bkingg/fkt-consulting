@@ -2,12 +2,12 @@ import urlFor from "@/lib/urlFor";
 import Image from "next/image";
 import Link from "next/link";
 import CustomPortableText from "@/components/CustomPortableText";
-import { SanityImageAssetDocument } from "next-sanity";
+import { PortableTextBlock, SanityImageAssetDocument } from "next-sanity";
 
 interface MediaTextSectionProps {
   section: {
     title: string;
-    description: string;
+    description: PortableTextBlock[];
     image: SanityImageAssetDocument;
     layoutColor: string;
     layout: string;

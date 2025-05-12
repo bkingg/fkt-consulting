@@ -1,9 +1,15 @@
 import urlFor from "@/lib/urlFor";
-import { PortableText } from "@portabletext/react";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
 import Image from "next/image";
+import type { PortableTextBlock } from "@portabletext/types";
+import type { SanityImageAssetDocument } from "next-sanity";
 
-const CustomImageComponent = ({ value }: any) => {
-  console.log("value", value);
+// 👇 Strongly typed component props
+const CustomImageComponent = ({
+  value,
+}: {
+  value: SanityImageAssetDocument;
+}) => {
   return (
     <div className="mb-4">
       <Image
@@ -17,13 +23,16 @@ const CustomImageComponent = ({ value }: any) => {
   );
 };
 
-const components = {
+// 👇 Typed components map for PortableText
+const components: PortableTextComponents = {
   types: {
     image: CustomImageComponent,
   },
 };
+
+// 👇 Strongly type the content prop
 interface CustomPortableTextProps {
-  content: any; // You can refine this type further based on your schema
+  content: PortableTextBlock[];
 }
 
 export default function CustomPortableText({
