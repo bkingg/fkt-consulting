@@ -1,16 +1,20 @@
 "use client";
 
-import { PortableText } from "next-sanity";
+import { PortableText, PortableTextBlock } from "next-sanity";
 import { Accordion } from "react-bootstrap";
 
 interface FAQSectionProps {
-  section: any;
+  section: {
+    title: string;
+    description: string;
+    faq: QuestionReponse[];
+  };
 }
 
 interface QuestionReponse {
   _key: string;
   question: string;
-  reponse: any;
+  reponse: PortableTextBlock;
 }
 
 export default function FAQSection({ section }: FAQSectionProps) {

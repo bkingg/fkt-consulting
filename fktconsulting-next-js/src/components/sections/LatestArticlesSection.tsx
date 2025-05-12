@@ -4,7 +4,11 @@ import ArticleCard from "@/components/ArticleCard";
 import Link from "next/link";
 
 interface LatestArticlesSectionProps {
-  section: any;
+  section: {
+    title: string;
+    description: string;
+    actualites: SanityDocument[];
+  };
 }
 
 const ACTUALITES_QUERY = groq`*[

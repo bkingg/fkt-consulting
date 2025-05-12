@@ -15,10 +15,6 @@ export default defineType({
       title: 'Pied de Page',
     },
     {
-      name: 'projets',
-      title: 'Projets',
-    },
-    {
       name: 'contact',
       title: 'Contact',
     },
@@ -50,15 +46,6 @@ export default defineType({
       title: 'Menu Principal',
       group: 'header',
       validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      title: 'Projets - Image',
-      name: 'projetsPageImage',
-      type: 'image',
-      group: 'projets',
-      options: {
-        hotspot: true,
-      },
     }),
     defineField({
       title: 'Titre',

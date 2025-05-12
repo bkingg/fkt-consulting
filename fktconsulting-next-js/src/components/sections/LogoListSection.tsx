@@ -3,7 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface LogoListSectionProps {
-  section: any;
+  section: {
+    title: string;
+    description: string;
+    logos: Logo[];
+  };
 }
 
 interface Logo {

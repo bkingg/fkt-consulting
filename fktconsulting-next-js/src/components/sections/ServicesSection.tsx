@@ -3,7 +3,11 @@ import Link from "next/link";
 import urlFor from "@/lib/urlFor";
 
 interface ServicesSectionProps {
-  section: any;
+  section: {
+    title: string;
+    description: string;
+    services: Service[];
+  };
 }
 
 interface Service {

@@ -3,7 +3,11 @@ import Image from "next/image";
 import { Carousel, CarouselItem } from "react-bootstrap";
 
 interface TemoignagesSectionProps {
-  section: any;
+  section: {
+    title: string;
+    description: string;
+    temoignages: Temoignage[];
+  };
 }
 
 interface Temoignage {
@@ -17,7 +21,6 @@ interface Temoignage {
 export default function TemoignagesSection({
   section,
 }: TemoignagesSectionProps) {
-  console.log("section.temoignages", section.temoignages);
   return (
     <section className="section  section-animate section__temoignages">
       <div className="container">

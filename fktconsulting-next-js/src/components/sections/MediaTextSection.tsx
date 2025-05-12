@@ -2,9 +2,29 @@ import urlFor from "@/lib/urlFor";
 import Image from "next/image";
 import Link from "next/link";
 import CustomPortableText from "@/components/CustomPortableText";
+import { SanityImageAssetDocument } from "next-sanity";
 
 interface MediaTextSectionProps {
-  section: any;
+  section: {
+    title: string;
+    description: string;
+    image: SanityImageAssetDocument;
+    layoutColor: string;
+    layout: string;
+    mediaType: string;
+    video: {
+      title: string;
+      url: string;
+    };
+    showCta: string;
+    linkType: string;
+    internalLink: {
+      _type: string;
+      slug: { current: string };
+    };
+    externalUrl: string;
+    ctaText: string;
+  };
 }
 
 export default function MediaTextSection({ section }: MediaTextSectionProps) {

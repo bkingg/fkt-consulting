@@ -1,5 +1,9 @@
 interface VideoSectionProps {
-  section: any;
+  section: {
+    title: string;
+    description: string;
+    url: string;
+  };
 }
 
 export default function VideoSection({ section }: VideoSectionProps) {

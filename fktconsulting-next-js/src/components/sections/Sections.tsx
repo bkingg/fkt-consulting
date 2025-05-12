@@ -6,7 +6,6 @@ import CallToActionSection from "./CallToActionSection";
 import ServicesSection from "./ServicesSection";
 import FAQSection from "./FAQSection";
 import MediaTextSection from "./MediaTextSection";
-import ProjetsSection from "./ProjetsSection";
 import TemoignagesSection from "./TemoignagesSection";
 import VideoSection from "./VideoSection";
 
@@ -47,9 +46,6 @@ export default async function Sections({ sections }: SectionsProps) {
           )) ||
           (section._type == "services" && (
             <ServicesSection key={section._key} section={section} />
-          )) ||
-          (section._type == "projets" && (
-            <ProjetsSection key={section._key} section={section} />
           )) ||
           (section._type == "temoignages" && (
             <TemoignagesSection key={section._key} section={section} />
