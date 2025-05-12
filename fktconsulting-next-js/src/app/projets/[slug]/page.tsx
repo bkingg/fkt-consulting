@@ -1,5 +1,5 @@
 import { sanityFetch } from "@/sanity/client";
-import { groq, SanityDocument, SanityImageAssetDocument } from "next-sanity";
+import { groq, SanityDocument } from "next-sanity";
 import { PortableText } from "@portabletext/react";
 import urlFor from "@/lib/urlFor";
 import { notFound } from "next/navigation";
