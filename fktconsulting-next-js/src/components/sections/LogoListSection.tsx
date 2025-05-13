@@ -1,20 +1,10 @@
 import urlFor from "@/lib/urlFor";
+import { LogoListSectionType } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
 interface LogoListSectionProps {
-  section: {
-    title: string;
-    description: string;
-    logos: Logo[];
-  };
-}
-
-interface Logo {
-  _key: string;
-  image: object;
-  url: string;
-  title: string;
+  section: LogoListSectionType;
 }
 
 export default function LogoListSection({ section }: LogoListSectionProps) {
@@ -24,7 +14,7 @@ export default function LogoListSection({ section }: LogoListSectionProps) {
         {section.title !== undefined && <h1>{section.title}</h1>}
         {section.description !== undefined && <p>{section.description}</p>}
         <div className="section__logo-list__logos row row-cols-2 row-cols-md-5 justify-content-center align-items-center">
-          {section.logos.map((logo: Logo) => {
+          {section.logos.map((logo) => {
             return (
               <div key={logo._key} className="col">
                 {logo.url !== "#" ? (

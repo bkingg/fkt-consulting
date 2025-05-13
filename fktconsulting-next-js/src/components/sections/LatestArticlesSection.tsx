@@ -2,13 +2,10 @@ import { sanityFetch } from "@/sanity/client";
 import { groq, SanityDocument } from "next-sanity";
 import ArticleCard from "@/components/ArticleCard";
 import Link from "next/link";
+import { LatestArticlesSectionType } from "@/types";
 
 interface LatestArticlesSectionProps {
-  section: {
-    title: string;
-    description: string;
-    actualites: SanityDocument[];
-  };
+  section: LatestArticlesSectionType;
 }
 
 const ACTUALITES_QUERY = groq`*[

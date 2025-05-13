@@ -1,21 +1,10 @@
 import urlFor from "@/lib/urlFor";
+import { TemoignagesSectionType } from "@/types";
 import Image from "next/image";
 import { Carousel, CarouselItem } from "react-bootstrap";
 
 interface TemoignagesSectionProps {
-  section: {
-    title: string;
-    description: string;
-    temoignages: Temoignage[];
-  };
-}
-
-interface Temoignage {
-  _key: string;
-  image: object;
-  nom: string;
-  message: string;
-  position: string;
+  section: TemoignagesSectionType;
 }
 
 export default function TemoignagesSection({
@@ -32,7 +21,7 @@ export default function TemoignagesSection({
         )}
         {section.temoignages.length > 0 && (
           <Carousel interval={100000}>
-            {section.temoignages?.map((temoignage: Temoignage) => {
+            {section.temoignages?.map((temoignage) => {
               const temoignageImageUrl = temoignage.image
                 ? urlFor(temoignage.image).size(200, 200).fit("crop").url()
                 : "";

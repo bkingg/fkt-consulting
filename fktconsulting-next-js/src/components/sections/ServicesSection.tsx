@@ -1,21 +1,10 @@
 import ServiceCard from "@/components/ServiceCard";
 import Link from "next/link";
 import urlFor from "@/lib/urlFor";
+import { ServicesSectionType } from "@/types";
 
 interface ServicesSectionProps {
-  section: {
-    title: string;
-    description: string;
-    services: Service[];
-  };
-}
-
-interface Service {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  image: string;
-  imageUrl: string;
+  section: ServicesSectionType;
 }
 
 export default async function ServicesSection({
@@ -32,7 +21,7 @@ export default async function ServicesSection({
           <p className="text-center">{section.description}</p>
         )}
         <div className="row row-cols-1 row-cols-md-3 pt-4 d-flex justify-content-center">
-          {services.map((service: Service) => {
+          {services.map((service) => {
             service.imageUrl = service.image
               ? urlFor(service.image).size(500, 500).fit("crop").url()
               : "";

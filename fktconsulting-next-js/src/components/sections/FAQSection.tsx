@@ -1,16 +1,11 @@
 "use client";
 
-import { PortableText, PortableTextBlock, SanityDocument } from "next-sanity";
+import { FAQSectionType } from "@/types";
+import { PortableText } from "next-sanity";
 import { Accordion } from "react-bootstrap";
 
 interface FAQSectionProps {
-  section: SanityDocument;
-}
-
-interface QuestionReponse {
-  _key: string;
-  question: string;
-  reponse: PortableTextBlock;
+  section: FAQSectionType;
 }
 
 export default function FAQSection({ section }: FAQSectionProps) {
@@ -21,18 +16,16 @@ export default function FAQSection({ section }: FAQSectionProps) {
         {section.description !== undefined && <p>{section.description}</p>}
         <div className="">
           <Accordion flush>
-            {section.faq?.map(
-              ({ _key, question, reponse }: QuestionReponse) => {
-                return (
-                  <Accordion.Item key={_key} eventKey={_key}>
-                    <Accordion.Header>{question}</Accordion.Header>
-                    <Accordion.Body>
-                      <PortableText value={reponse} />
-                    </Accordion.Body>
-                  </Accordion.Item>
-                );
-              }
-            )}
+            {section.faq?.map(({ _key, question, reponse }) => {
+              return (
+                <Accordion.Item key={_key} eventKey={_key}>
+                  <Accordion.Header>{question}</Accordion.Header>
+                  <Accordion.Body>
+                    <PortableText value={reponse} />
+                  </Accordion.Body>
+                </Accordion.Item>
+              );
+            })}
           </Accordion>
         </div>
       </div>

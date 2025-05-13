@@ -1,27 +1,18 @@
 import urlFor from "@/lib/urlFor";
+import { SliderSectionType } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { Carousel, CarouselItem, CarouselCaption } from "react-bootstrap";
 
 interface SliderSectionProps {
-  section: { slides: Slide[] };
-}
-
-interface Slide {
-  _key: string;
-  image: object;
-  captionPosition: string;
-  title: string;
-  description: string;
-  ctaText: string;
-  ctaUrl: string;
+  section: SliderSectionType;
 }
 
 export default function SliderSection({ section }: SliderSectionProps) {
   return (
     <section className="section__slider">
       <Carousel interval={1000}>
-        {section.slides?.map((slide: Slide) => {
+        {section.slides?.map((slide) => {
           const slideImageUrl = slide.image
             ? urlFor(slide.image).size(1200, 700).fit("crop").url()
             : "";

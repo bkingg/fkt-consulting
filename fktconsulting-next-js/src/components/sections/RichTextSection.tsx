@@ -1,8 +1,8 @@
 import CustomPortableText from "@/components/CustomPortableText";
-import { PortableTextBlock, SanityDocument } from "next-sanity";
+import { RichTextSectionType } from "@/types";
 
 interface RichTextSectionProps {
-  section: SanityDocument;
+  section: RichTextSectionType;
 }
 
 export default async function RichTextSection({

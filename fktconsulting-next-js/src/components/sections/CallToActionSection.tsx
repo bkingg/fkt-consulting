@@ -1,17 +1,9 @@
 import urlFor from "@/lib/urlFor";
-import { SanityAssetDocument, SanityImageAssetDocument } from "next-sanity";
+import { CallToActionSectionType } from "@/types";
 import Link from "next/link";
 
 interface CallToActionSectionProps {
-  section: {
-    image: SanityImageAssetDocument;
-    title: string;
-    description: string;
-    ctaText: string;
-    ctaUrl: string;
-    brochure: SanityAssetDocument;
-    brochureUrl: string;
-  };
+  section: CallToActionSectionType;
 }
 
 export default function CallToActionSection({

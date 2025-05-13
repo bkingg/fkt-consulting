@@ -1,9 +1,7 @@
+import { VideoSectionType } from "@/types";
+
 interface VideoSectionProps {
-  section: {
-    title: string;
-    description: string;
-    url: string;
-  };
+  section: VideoSectionType;
 }
 
 export default function VideoSection({ section }: VideoSectionProps) {
