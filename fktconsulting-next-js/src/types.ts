@@ -11,6 +11,7 @@ export interface BaseSection {
 }
 
 export interface CallToActionSectionType extends BaseSection {
+  _type: "call_to_action";
   image: SanityImageAssetDocument;
   title: string;
   description: string;
@@ -33,12 +34,14 @@ export interface QuestionReponse {
 }
 
 export interface LatestArticlesSectionType extends BaseSection {
+  _type: "latest_articles";
   title: string;
   description: string;
   actualites: SanityDocument[];
 }
 
 export interface LogoListSectionType extends BaseSection {
+  _type: "logo_list";
   title: string;
   description: string;
   logos: Logo[];
@@ -52,6 +55,7 @@ export interface Logo {
 }
 
 export interface MediaTextSectionType extends BaseSection {
+  _type: "media_text";
   title: string;
   description: PortableTextBlock[];
   image: SanityImageAssetDocument;
@@ -73,10 +77,12 @@ export interface MediaTextSectionType extends BaseSection {
 }
 
 export interface RichTextSectionType extends BaseSection {
+  _type: "rich_text";
   richText: PortableTextBlock[];
 }
 
 export interface ServicesSectionType extends BaseSection {
+  _type: "services";
   title: string;
   description: string;
   services: Service[];
@@ -91,6 +97,7 @@ export interface Service {
 }
 
 export interface SliderSectionType extends BaseSection {
+  _type: "slider";
   slides: Slide[];
 }
 
@@ -105,6 +112,7 @@ export interface Slide {
 }
 
 export interface TemoignagesSectionType extends BaseSection {
+  _type: "temoignages";
   title: string;
   description: string;
   temoignages: Temoignage[];
@@ -119,6 +127,7 @@ export interface Temoignage {
 }
 
 export interface VideoSectionType extends BaseSection {
+  _type: "video";
   title: string;
   description: string;
   url: string;
