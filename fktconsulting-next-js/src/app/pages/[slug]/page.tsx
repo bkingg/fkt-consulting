@@ -8,12 +8,17 @@ import { Metadata } from "next";
 import Breadcrumb from "react-bootstrap/esm/Breadcrumb";
 import { BreadcrumbItem } from "react-bootstrap";
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string[] }>;
+}) {
+  const { slug } = await params;
   const PAGE_QUERY = groq`
     *[
       _type == "page"
       && defined(slug.current)
-      && slug.current == "${params.slug}"
+      && slug.current == "${slug}"
     ][0]{
       _id, title, slug, image, 
       sections[]{
@@ -48,13 +53,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string[] }>;
 }): Promise<Metadata> {
+  const { slug } = await params;
   const PAGE_QUERY = groq`
     *[
       _type == "page"
       && defined(slug.current)
-      && slug.current == "${params.slug}"
+      && slug.current == "${slug}"
     ][0]{
       title, image
     }`;

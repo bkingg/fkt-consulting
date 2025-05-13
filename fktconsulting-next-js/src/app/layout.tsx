@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import BackToTop from "@/components/BackToTop";
+import { Suspense } from "react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -41,7 +42,9 @@ export default async function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <AnimateOnScroll />
+        <Suspense>
+          <AnimateOnScroll />
+        </Suspense>
         <BackToTop />
       </body>
     </html>

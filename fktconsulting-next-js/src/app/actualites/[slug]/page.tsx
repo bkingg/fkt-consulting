@@ -16,13 +16,14 @@ let actualiteImageUrl: string;
 export default async function Actualite({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string[] }>;
 }) {
+  const { slug } = await params;
   const ACTUALITE_QUERY = groq`
     *[
       _type == "article"
       && defined(slug.current)
-      && slug.current == "${params.slug}"
+      && slug.current == "${slug}"
     ][0]{
       _id, 
       title, 

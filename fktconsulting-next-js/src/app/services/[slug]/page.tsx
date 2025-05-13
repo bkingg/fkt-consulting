@@ -14,15 +14,14 @@ let serviceImageUrl: string;
 export default async function Service({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string[] }>;
 }) {
-  console.log("params", params);
-
+  const { slug } = await params;
   const SERVICE_QUERY = groq`
     *[
       _type == "service"
       && defined(slug.current)
-      && slug.current == "${params.slug}"
+      && slug.current == "${slug}"
     ][0]{
       _id, 
       title, 
