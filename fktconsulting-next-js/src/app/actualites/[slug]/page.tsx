@@ -5,7 +5,7 @@ import urlFor from "@/lib/urlFor";
 import PageHeader from "@/components/PageHeader";
 import { parseISO, formatDistance } from "date-fns";
 import { fr } from "date-fns/locale";
-import { notFound } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import Tags from "@/components/Tags";
 import { Metadata } from "next";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
@@ -13,16 +13,14 @@ import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 let actualite: SanityDocument;
 let actualiteImageUrl: string;
 
-export default async function Actualite({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function Actualite() {
+  const params = useParams();
+  const slug = params?.slug as string | undefined;
   const ACTUALITE_QUERY = groq`
     *[
       _type == "article"
       && defined(slug.current)
-      && slug.current == "${params.slug}"
+      && slug.current == "${slug}"
     ][0]{
       _id, 
       title, 
