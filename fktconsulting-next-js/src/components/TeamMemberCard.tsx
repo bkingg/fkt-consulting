@@ -1,5 +1,4 @@
 import { SanityDocument } from "next-sanity";
-import Link from "next/link";
 import urlFor from "@/lib/urlFor";
 import Image from "next/image";
 
