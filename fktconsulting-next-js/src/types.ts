@@ -111,6 +111,23 @@ export interface Slide {
   ctaUrl: string;
 }
 
+export interface TeamSectionType extends BaseSection {
+  _type: "team_members";
+  title: string;
+  description: string;
+  team: TeamMember[];
+  ctaText: string;
+  ctaUrl: string;
+}
+
+export interface TeamMember {
+  _key: string;
+  image: object;
+  title: string;
+  description: string;
+  // social: ;
+}
+
 export interface TemoignagesSectionType extends BaseSection {
   _type: "temoignages";
   title: string;
@@ -143,4 +160,5 @@ export type Section =
   | CallToActionSectionType
   | LatestArticlesSectionType
   | ServicesSectionType
+  | TeamSectionType
   | TemoignagesSectionType;

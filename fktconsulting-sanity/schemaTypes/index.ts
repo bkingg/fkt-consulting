@@ -3,6 +3,7 @@ import menuType from './menuType'
 import pageType from './pageType'
 import articleType from './articleType'
 import serviceType from './serviceType'
+import teamType from './teamType'
 import textWithLinksBlock from './textWithLinksBlock'
 import videoType from './videoType'
 import siteSettings from './siteSettings'
@@ -16,6 +17,7 @@ import callToActionSection from './callToActionSection'
 import servicesSection from './servicesSection'
 import faqSection from './faqSection'
 import mediaTextSection from './mediaTextSection'
+import teamSection from './teamSection'
 import temoignagesSection from './temoignagesSection'
 
 export const schemaTypes = [
@@ -23,6 +25,7 @@ export const schemaTypes = [
   menuItemType,
   pageType,
   serviceType,
+  teamType,
   articleType,
   videoType,
   siteSettings,
@@ -37,5 +40,6 @@ export const schemaTypes = [
   callToActionSection,
   servicesSection,
   mediaTextSection,
+  teamSection,
   temoignagesSection,
 ]

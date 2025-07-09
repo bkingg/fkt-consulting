@@ -17,30 +17,35 @@ export default function LogoListSection({ section }: LogoListSectionProps) {
           {section.logos.map((logo) => {
             return (
               <div key={logo._key} className="col">
-                {logo.url !== "#" ? (
-                  <Link href={logo.url} target="_blank">
-                    <Image
-                      src={urlFor(logo.image)
-                        .size(200, 200)
-                        .crop("center")
-                        .url()}
-                      width={150}
-                      height={150}
-                      alt={logo.title}
-                      title={logo.title}
-                      className="img-fluid"
-                    />
-                  </Link>
-                ) : (
-                  <Image
-                    src={urlFor(logo.image).size(200, 200).crop("center").url()}
-                    width={150}
-                    height={150}
-                    alt={logo.title}
-                    title={logo.title}
-                    className="img-fluid"
-                  />
-                )}
+                {logo.url !== "#"
+                  ? logo.image && (
+                      <Link href={logo.url} target="_blank">
+                        <Image
+                          src={urlFor(logo.image)
+                            .size(200, 200)
+                            .crop("center")
+                            .url()}
+                          width={150}
+                          height={150}
+                          alt={logo.title}
+                          title={logo.title}
+                          className="img-fluid"
+                        />
+                      </Link>
+                    )
+                  : logo.image && (
+                      <Image
+                        src={urlFor(logo.image)
+                          .size(200, 200)
+                          .crop("center")
+                          .url()}
+                        width={150}
+                        height={150}
+                        alt={logo.title}
+                        title={logo.title}
+                        className="img-fluid"
+                      />
+                    )}
               </div>
             );
           })}

@@ -45,6 +45,7 @@ export default defineType({
         {type: 'latest_articles'},
         {type: 'call_to_action'},
         {type: 'services'},
+        {type: 'team_members'},
         {type: 'temoignages'},
         {type: 'video'},
       ],

@@ -6,6 +6,7 @@ import CallToActionSection from "./CallToActionSection";
 import ServicesSection from "./ServicesSection";
 import FAQSection from "./FAQSection";
 import MediaTextSection from "./MediaTextSection";
+import TeamSection from "./TeamSection";
 import TemoignagesSection from "./TemoignagesSection";
 import VideoSection from "./VideoSection";
 import {
@@ -18,6 +19,7 @@ import {
   Section,
   ServicesSectionType,
   SliderSectionType,
+  TeamSectionType,
   TemoignagesSectionType,
   VideoSectionType,
 } from "@/types";
@@ -83,6 +85,12 @@ export default async function Sections({ sections }: SectionsProps) {
             <ServicesSection
               key={section._key}
               section={section as ServicesSectionType}
+            />
+          )) ||
+          (section._type == "team_members" && (
+            <TeamSection
+              key={section._key}
+              section={section as TeamSectionType}
             />
           )) ||
           (section._type == "temoignages" && (

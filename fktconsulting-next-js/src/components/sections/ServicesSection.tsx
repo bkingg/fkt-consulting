@@ -29,7 +29,7 @@ export default async function ServicesSection({
           })}
         </div>
         <div className="text-center my-2">
-          <Link href="/services" className="btn btn-primary">
+          <Link href="/services" className="btn btn-secondary">
             Voir tous les Services
           </Link>
         </div>
